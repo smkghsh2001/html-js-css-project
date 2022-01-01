@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <script src="./SimpleImage.js"></script>
+    <title>MINI PROJECT 1</title>
+</head>
+<h1>Image Filters</h1>
+
+<body onload = "init()">
+    <canvas id="can"></canvas>
+    <p>
+    <h2>Load Image</h2>
+    <input type="file" multiple="false" id="finput" accept="image/*" onchange="loadFile()" />
+    </p>
+    <p>
+    <h2>Image filters</h2>
+    <div id="d1">
+        <input type="button" value="Grayscale" id="button1" onclick="doGray()" />
+        <input type="button" value="Red" id="button2" onclick="doRed()" />
+        <input type="button" value="Rainbow" id="button3" onclick="doRainbow()" />
+        <input type="button" value="Mirror" id="button4" onclick="mirror()" />
+    </div>
+    </p>
+    <p>
+    <div id="d2">
+        <h3>Blur:</h3>Intensity
+        <input type="range" id="in1" min="30" max="100" value="40" oninput="intensity(this.value)" />
+        <output id="sizeOutput">40</output>
+        Radius
+        <input type="range" id="in2" min="3" max="20" value="6" oninput="radius(this.value)" />
+        <output id="sizeOutput1">6</output>
+        <input type="button" id="bnMakeBlur" value="Apply" onclick="blurFilter()">
+    </div>
+    </p>
+    <p>
+        <input type="button" value="Reset" id="button5" onclick="doReset()" />
+    </p>
+</body>
+<script src="./script.js"></script>
+</html>
